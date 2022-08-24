@@ -86,7 +86,10 @@ dnnList = [dnn1, dnn2]
 # In[428]:
 
 
+# need some environment variables instead of the magic values 
 viaAddr = '10.1.1.2'
+nwInterface = 'en01'
+
 routes = [{ 'to': getRoute(dnn['defGw'],dnn['subnetMask']), 'via': viaAddr} for dnn in dnnList]
 print(routes)
 
@@ -96,7 +99,7 @@ print(routes)
 # In[429]:
 
 
-config=createNetplanConfig('en01',routes)
+config=createNetplanConfig(nwInterface,routes)
 
 
 # In[430]:
